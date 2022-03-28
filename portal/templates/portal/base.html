@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+
+        <title>Ruth Miskin Portal</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+
+        <div class="page-header">
+            <a href="/logout"><h3><span class="glyphicon glyphicon-log-out"></span> logout</h3></a>
+            <h1><a href="/welcome">Ruth Miskin Portal</a></h1>
+
+        </div>
+
+        <div class="content container">
+            {% block content %}
+            {% endblock %}
+        </div>
+     </body>
+</html>

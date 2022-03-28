@@ -1,0 +1,27 @@
+{% extends 'portal/base1.html' %}
+
+{% block content %}
+
+    <h1>Register User</h1>
+    <br>
+    <form action="/create_user" id="registerForm" method="post">{% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="" id="name" required>
+        <label for="surname">Surname:</label>
+        <input type="text" name="surname" value="" id="surname" required>
+        <label for="email">Email:</label>
+        <input type="text" name="email" value="" id="email" required>
+        <label for="school">School:</label>
+        <select form="registerForm" name="school" id="school" required>
+            <option value="">Select a School</option>
+            {% for school in open_schools_list %}
+                <option value="{{ school.urn }}">{{ school.name }}</option>
+            {% endfor %}
+        </select>
+        <label for="dob">Date of Birth:</label>
+        <input type="text" name="dob" value="" id="dpb">
+
+        <input type="submit" value="Register" />
+    </form>
+
+{% endblock %}

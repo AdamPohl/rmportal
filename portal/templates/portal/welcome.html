@@ -1,0 +1,19 @@
+{% extends 'portal/base.html' %}
+
+{% block content %}
+
+    <h1>Welcome {{ name }} {{ surname }} to the <span>{{ school.name }}</span> welcome page.</h1>
+    <br>
+    <ul>
+        <li> Our records state that the school is located here: <span>{{ school.town }}, {{ school.postcode }}</span></li>
+
+        {% if school.phone_number != ''  %}
+            <li> We have the following telephone number on file for the school: <span>{{ school.phone_number }}</span></li>
+        {% endif %}
+
+        {% if school.school_website != None  %}
+            <li> The following link is their website according to our database: <a>{{ school.school_website }}</a></li>
+        {% endif %}
+    </ul>
+
+{% endblock %}

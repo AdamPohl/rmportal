@@ -1,0 +1,28 @@
+{% extends 'portal/base1.html' %}
+
+{% block content %}
+
+    {% if form.errors %}
+        <p class="error">Sorry, that email is not linked to that school</p>
+    {% endif %}
+
+    <h1>login Details</h1>
+    <br>
+    <form action="/user/auth" id="loginForm" method="post">{% csrf_token %}
+        <label for="username">Email:</label>
+        <input type="text" name="username" value="" id="username" required>
+        <label for="school">School:</label>
+        <select form="loginForm" name="school" id="school" required>
+            <option value="">Select a School</option>
+            {% for school in open_schools_list %}
+                <option value="{{ school.urn }}">{{ school.name }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="login" />
+
+    </form>
+
+    <h2>Click here to <a href="/register">register a new user</a></h2>
+
+{% endblock %}
