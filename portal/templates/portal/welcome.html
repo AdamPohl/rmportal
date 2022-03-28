@@ -7,11 +7,11 @@
     <ul>
         <li> Our records state that the school is located here: <span>{{ school.town }}, {{ school.postcode }}</span></li>
 
-        {% if school.phone_number != ''  %}
+        {% if school.phone_number != None and school.phone_number != ''  %}
             <li> We have the following telephone number on file for the school: <span>{{ school.phone_number }}</span></li>
         {% endif %}
 
-        {% if school.school_website != None  %}
+        {% if school.school_website != None and school.school_website != ''  %}
             <li> The following link is their website according to our database: <a>{{ school.school_website }}</a></li>
         {% endif %}
     </ul>
